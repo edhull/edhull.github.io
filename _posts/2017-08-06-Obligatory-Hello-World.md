@@ -6,7 +6,7 @@ author: "Ed Hull"
 
 So, I finally got around to creating a blog. 
 
-I spent some time dabbling whether or not to host a joint Wiki/Blog (using something like [Gollum][gollum]) and decided that I'll eventually host a Wiki separately, not least so that I can keep track of tweaks and tricks I find from playing with infrastructure. This is my first venture with Jekyll and so far I'm impressed, and it's standing up well behind an Apache Proxy.
+I spent some time dabbling whether or not to host a joint Wiki/Blog and decided that I'll eventually host a Wiki separately, not least so that I can keep track of tweaks and tricks I find from playing with infrastructure. This is my first venture with Jekyll and so far I'm impressed, and it's standing up well behind an Apache Proxy.
 
 ##Some topics I want to cover in the future are:
 - Terraform - I am become death, the destroyer of statefiles
