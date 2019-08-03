@@ -1,0 +1,30 @@
+# Permalinks
+permalink:      /blog/:year-:month-:day/:title
+# Setup
+title:          "[/home/edhull/]:$ "
+paginate:       5
+paginate_path: "blog/page:num/"
+baseurl:        ""
+url:            "https://edhull.co.uk/"
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
+
+# Build settings
+markdown:       kramdown
+
+# About
+author:
+  name:         Ed Hull
+  url:          https://edhull.co.uk
+
+# Custom vars
+version:        3.4.1
+github:
+  repo:         https://github.com/edhull
+
+# Gems
+gems:
+  - jekyll-paginate
