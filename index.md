@@ -28,7 +28,7 @@ I enjoy all things Linux and open source, and taking things apart to see how the
                         return
                 }
   </script>
-[Twitter](http://www.twitter.com/Eddhull)
-[Github](https://github.com/edhull)
-[LinkedIn](https://www.linkedin.com/in/edhull)
+[Twitter](http://www.twitter.com/Eddhull) <br />
+[Github](https://github.com/edhull) <br />
+[LinkedIn](https://www.linkedin.com/in/edhull) <br />
 <SCRIPT LANGUAGE="JavaScript" type="text/javascript"> gen_mail_to_link('ed','edhull.co.uk','') </script><br />
