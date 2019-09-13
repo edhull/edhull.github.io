@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/edhull
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://edhull.co.uk
+  * I am edhull (https://keybase.io/edhull) on keybase.
+  * I have a public key ASD6a7b6JWR6Z4BiBduE_l8_X5c2U0DrPLnVo_dki5s4iQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a3759302c0bb29823e029a4755625261dccd64f7eb1a6c7839e744e07fca27b20a",
+      "host": "keybase.io",
+      "kid": "0120fa6bb6fa25647a67806205db84fe5f3f5f97365340eb3cb9d5a3f7648b9b38890a",
+      "uid": "b4626362c38fc17cc6e427775fea2a19",
+      "username": "edhull"
+    },
+    "merkle_root": {
+      "ctime": 1568387138,
+      "hash": "8841fbff01cf6060884d19133b508d75902b5948d13e5fbb1bdc0b338093154fb118e818312d8615d0ef8a58afec75e0d9e6bc255f7ca3c502c43cf374d0d19a",
+      "hash_meta": "a43765c3436cad6c0610d3eb2f1623dc02e2321f262ea8b123f6fdc2e6a7e1e1",
+      "seqno": 7168561
+    },
+    "service": {
+      "entropy": "YBK2nmYnKwl3Ib79QuP51cQ6",
+      "hostname": "edhull.co.uk",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.4.1"
+  },
+  "ctime": 1568387144,
+  "expire_in": 504576000,
+  "prev": "8d63269c4d6f436c949c6521f6222fd80042866abc6c4496b636bafa66248abd",
+  "seqno": 28,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg+mu2+iVkemeAYgXbhP5fP1+XNlNA6zy51aP3ZIubOIkKp3BheWxvYWTESpcCHMQgjWMmnE1vQ2yUnGUh9iIv2ABChmq8bESWtja6+mYkir3EII/3t2cYGji25VitKnyqeVf9cogYuCOuylOwkZ5ehl+SAgHCo3NpZ8RASvd4syC3420/KVOKJsOWWjIpOdCZJfaCCAsIzrhF8lMH3MonMRINGHNjMB/VDNaiUP+JM1iz9i4V/Sg0loiYA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINimb1JWwYlblSExoAehYjdXJmCBSJqY7fxYMGuCkN18o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/edhull
+
+==================================================================
