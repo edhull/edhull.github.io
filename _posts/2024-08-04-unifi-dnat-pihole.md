@@ -10,6 +10,7 @@ published: true
 
 It's been a while since I last made a blog post, sorry. Lots of good things have happened in that time. I've since setup a company and, if you wish, you can [hire my services](https://www.zeyix.co.uk/contact). On with the show!
 <br />
+
 **The What**
 The purpose of this blog is to show you how you can leverage the new DNAT feature introduced in the UniFi Network Application 8.3.32 to redirect some/all DNS traffic to a custom (local) endpoint. My own use-case for this is to redirect outbound DNS traffic from devices which have opted not to use my own Pi-Hole server (I'm looking at you, IoT devices) and instead to force them to use it silently. 
 
@@ -18,6 +19,7 @@ This is a better solution than using a firewall to block all traffic destined fo
 <br />
 
 **The How**
+<br />
 We're going to leverage the magic of DNAT - _Destination Network Address Translation_. Simply put, this allows us to re-write the _destination_ target of packets passing through our network. We can also use DNAT to re-write other fields at the [Layer 4 level](https://en.wikipedia.org/wiki/OSI_model) of the packet, such as port numbers. Ubiquiti released an enormous update to their Network Application which now allow custom SNAT/DNAT rules that enables this solution. The following assumes that you're also using an up-to-date UniFi device which supports DNAT, or a custom network appliance with similar capabilities.
 
 ![dnat-1](/images/blog/dnat_1.png)
