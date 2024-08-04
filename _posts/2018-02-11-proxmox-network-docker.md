@@ -7,6 +7,14 @@ tags: portainer proxmox docker macvlan networking iptables container virtualizat
 published: true
 ---
 <br/>
+
+--- 
+**Message from the future**
+
+**I do not recommend using a Proxmox hypervisor as a Docker host.** There are all sorts of nasties which can manifest by doing so. Instead, I recommend running Docker in a VM where possible. Continue at your own risk!
+
+---
+
 I'm an avid Proxmox advocate for homelabbing. I’ve used it for the last 5 years and I enjoy using it immensely. 
 
 _However._
