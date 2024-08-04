@@ -13,7 +13,7 @@ It's been a while since I last made a blog post, sorry. Lots of good things have
 
 ## The What
 
-The purpose of this blog is to show you how you can leverage the new DNAT feature introduced in the UniFi Network Application 8.3.32 to redirect some/all DNS traffic to a custom (local) endpoint. My own use-case for this is to redirect outbound DNS traffic from devices which have opted not to use my own Pi-Hole server (I'm looking at you, IoT devices) and instead to force them to use it silently. 
+The purpose of this blog is to show you how you can leverage the new DNAT feature introduced in the [UniFi Network Application 8.3.32](https://community.ui.com/releases/UniFi-Network-Application-8-3-32/54f3b506-afcf-4a7c-aba6-01a884dd9003) to redirect some/all DNS traffic to a custom (local) endpoint. My own use-case for this is to redirect outbound DNS traffic from devices which have opted not to use my own Pi-Hole server (I'm looking at you, IoT devices) and instead to force them to use it silently. 
 
 This is a better solution than using a firewall to block all traffic destined for 8.8.8.8/1.1.1.1 etc, as it means that the device can continue to function whilst still subject to your own blocking criteria. It may also help prevent any non-compliance where you may be blocking specific DNS entries, such as for parental control or IoT lockdown.
 
