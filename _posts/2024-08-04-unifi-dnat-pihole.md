@@ -29,7 +29,7 @@ In the example above, we're going to assume that we have a local DNS server runn
 
 We're also assuming that your DNS server and your traffic source are on different VLANs. **It's a bad idea to apply the following rule to your DNS server itself**, as you'll end up in a situation where the DNS server is having its outbound DNS traffic redirected to itself!
 
-Start by making sure that (if you are using a Ubiquiti device) it is up to date. I'll be using a UniFi Dream Machine Pro for this. 
+Start by making sure that, if you are using a Ubiquiti device, it is up to date. I'll be using a UniFi Dream Machine Pro for this. 
 
 If you are using a Pi-Hole or custom DNS server, I recommend adding a local domain for testing such as the following. This will allow you to test and verify that DNS is being properly redirected.
 
@@ -43,9 +43,9 @@ Create a new entry as similar to as follows:
 
 ```
 Type: Destination
-Name: _A custom name for your rule. Something short and sensible!_
+Name: A custom name for your rule. Something short and sensible!
 Protocol: TCP/UDP
-Interface: _Select whichever VLAN is used for your user/IoT/... network_
+Interface: Select whichever VLAN is used for your user/IoT/... network
 Destination Port: 53
 Translated IP Address: 192.168.1.53 (replace with your DNS server)
 Translated Port: 53
@@ -53,7 +53,9 @@ Translated Port: 53
 
 ![dnat-4](/images/blog/dnat4.png)
 
-Rinse and repeat for any other networks you wish to redirect DNS traffic from. 
+This rule will apply to all DNS traffic on port 53. If you want to restrict it to only specific upstream DNS servers, such as Google's 8.8.8.8 or Cloudflare's 1.1.1.1, set the Destination field too.
+
+Rinse and repeat this process for any other networks you wish to redirect DNS traffic from. 
 
 Make sure to **not include the network which contains your DNS server itself**. 
 
