@@ -1,0 +1,45 @@
+default_stages: [commit,]
+exclude: |
+  (?x)^(
+    ^.*/layers/python/lib/python.*/site-packages/.* |
+    ^.*/(lambda|lambdas)/.* |
+    ^.*/(aws_lambda)/.* |
+    Makefile |
+    .checkov.yml |
+    ^ansible/env/.* |
+    ^ansible/galaxy_collections/.* |
+    ^ansible/galaxy_roles/.* |
+    ^ansible/mess/.* |
+    ^mess/.* |
+    ^.*/crypt.yml |
+  )$
+repos:
+############
+# EXIF DATA #
+############
+  - repo: local
+    hooks:
+      - id: remove-exif-data
+        name: remove-exif-data
+        entry: .github/hooks/remove-exif-data.sh
+        language: script
+        files: (.*\.png|.*\.jpg,.*\.jpeg)$
+        pass_filenames: false
+############
+# GENERAL #
+############
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+        args: [--allow-multiple-documents, --unsafe]
+      - id: check-json
+      - id: pretty-format-json
+        args: [--autofix, --no-sort-keys]
+############
+# GITLEAKS #
+############
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.18.3
+    hooks:
+      - id: gitleaks
