@@ -70,4 +70,12 @@ If you created a test record on your DNS server, you can simulate a request to G
 ![dnat-5](/images/blog/dnat5.png)
 
 ---
+### Update 30/11/2024
+Frank from Denmark wrote to me with the following (summarised) query:
+
+> Would it work to redirect DNS traffic to 192.168.53.1 (a UDM-Pro interface on a VLAN with no devices) to ensure traffic is being routed? In this case, the UDM Pro could work as the DNS target on a dedicated VLAN, instead of a Pi-hole. 
+
+I didn't know the answer to this, so I tried it out! Sure enough, if you create an empty VLAN and point the destination DNAT traffic to the UDM-Pro interface on this VLAN, the traffic is routed and will be redirected to the UDM-Pro. This will allow you to force network devices to use the native DNS services of the router rather than needing to host a dedicated Pi-Hole on its own VLAN.
+
+---
 _N.B. Ubiquiti have a tendency to update their user interface frequently. The images above may no longer be accurate if you are reading this far in the future. Also if you're reading this far in the future, hello!_
