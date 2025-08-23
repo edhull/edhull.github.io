@@ -23,8 +23,6 @@ There are quite a few options around solar/battery combos, and I went with the T
 
 Two months and an approved [G99](https://connections.nationalgrid.co.uk/get-connected/solar-and-wind/generation-g99) later, the install was completed in the space of a day and I lived happily ever after! 
 
-...
-
 However... 
 
 It was only a matter of time before the itch began.
@@ -58,7 +56,7 @@ My setup is as follows:
 * I _do not_ have an EV, which impacts which energy tariffs I'm eligible for (particularly those with cheap overnight rates)
 * A newly opened Octopus energy Agile tariff (export license pending) with dynamic pricing that changes every 30 minutes
 
-![pw0](/images/blog/pw0.png)
+![pw0](/images/blog/pw0.jpg)
 
 Tesla Powerwalls only expose the following options for charging/discharging the battery:
 * _Reserve_ - A 'reserve' slider which can be set to tell the battery how much charge it must maintain. This can be used trigger the battery to charge from the grid (if the current charge < target reserve charge). Recently [Tesla have changed the behaviour of this slider](https://docs.netzero.energy/docs/tesla/BackupReserveUpdate) so that any reserve value between 80-100 will trigger a full backup cycle where the battery fills completely.
@@ -83,7 +81,7 @@ With creative use of switching between modes, the reserve slider, and enabling/d
 
 ## Teslemetry
 
-Early on in this adventure I accepted that the options for directly interacting with Tesla APIs [over the local network are limited](https://teslamotorsclub.com/tmc/threads/gateway2-dashboard-no-longer-accessible-as-of-17-06-2025.346025/) and that there would be a dependency on Tesla's internet-facing APIs. I wanted something reliable, and something that integrated into my existing smart home with minimal maintenance.
+Early on in this adventure, I accepted that the options for directly interacting with Tesla APIs [over the local network are limited](https://teslamotorsclub.com/tmc/threads/gateway2-dashboard-no-longer-accessible-as-of-17-06-2025.346025/) and that there would be a dependency on Tesla's internet-hosted APIs. I wanted something reliable, and something that integrated into my existing smart home with minimal maintenance.
 
 My first attempt to control the Powerwall outside the Tesla app was based on [Scott Helme's fantastic blog series](https://scotthelme.co.uk/tag/tesla-powerwall/) covering his own adventures automating his Tesla Powerwalls with Home Assistant and Teslemetry. Teslemetry is a service which acts on your behalf to talk to Tesla's APIs and expose metrics and controls in a way which Home Assistant understands. It has a very reasonable cost of just over £2 a month, which is much more than it saves me through exposing this functionality and much less than NetZero now charge (although admittedly the feature set is very different).
 
@@ -100,7 +98,7 @@ I started making my own automations and registered a free account with [Solcast]
 ![pw7](/images/blog/pw7.png)
 
 
-# Predbat 🦇 
+## Predbat 🦇 
 
 Whilst researching I came across [Predbat](https://github.com/springfall2008/batpred) (also called Batpred). Predbat is the open source brainchild of Trefor Southwell and is seriously impressive and incredibly advanced. You feed Predbat all of the metrics you can muster - electricity tariffs, weather forecasts, battery metrics, solar metrics - and it will do all of the legwork for you in creating an optimal plan for your battery to save you the most money. You can view exactly what it wants to do, when it wants to do it, and optionally have it control your battery system to implement those plans automatically.
 
