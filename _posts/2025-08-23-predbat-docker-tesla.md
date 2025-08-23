@@ -15,7 +15,9 @@ Recently, I've been having an uphill adventure fully automating my new solar/bat
 
 There are many reasons I was interested in having a PV/battery system installed, however earlier this year we had a number of power cuts in short succession affecting the local area due to a faulty underground cable. The power cuts went on for so long that they resulted in me needing to downtools at work, and there’s nothing like being plunged into darkness with a very hungry 3-month-old baby needing his bottles sterilised to make you realise just how dependent you are on the electricity grid!
 
-After a lot of research, I took the plunge and reached out to [Heatable](https://heatable.co.uk/) about having a solar and battery system installed. I first stumbled across Heatable through their [YouTube channel](https://www.youtube.com/@Heatable) where they have some fantastic content. They aren’t the cheapest installers, but they handle absolutely everything. I figured if I was going to spend a lot of money on a PV installation, I’d much rather have the peace of mind that it would be done properly the first time. 
+After a lot of research, I took the plunge and reached out to [Heatable](https://heatable.co.uk/) about having a solar and battery system installed. I first stumbled across Heatable through their [YouTube channel](https://www.youtube.com/@Heatable) where they have some fantastic content. 
+
+Heatable aren’t the cheapest installers, but they handle absolutely everything. I figured if I was going to spend a lot of money on a PV installation, I’d much rather have the peace of mind that it would be done properly the first time. 
 
 There are quite a few options around solar/battery combos, and I went with the Tesla Powerwall 3 for my battery due to a combination of the warranty and features provided by the Tesla Gateway for powercut situations.
 
@@ -48,8 +50,8 @@ Every PV / battery installation is unique which makes this more challenging. The
 There are also freak events to consider like lightning storms (or solar eclipses if you really enjoy separating your M&Ms).
 
 My setup is as follows:
-* A Tesla Powerwall 5 (13.5kWh battery, 5kWh maximum charge rate)
-* 7.20kWh G99 approved export from my local DNO
+* A Tesla Powerwall 5 (13.5kWh battery, 5kW maximum charge rate)
+* 7.2kWh G99 approved export from my local DNO
 * 10x REA Fusion² Panels split between the main house and a garden summerhouse
 * An Envoy Communication Gateway used for monitoring each of the individual solar panels
 * A smart meter capable of exporting readings every 30 minutes
@@ -91,14 +93,14 @@ I already have Home Assistant running in a container and orchestrated with k3s, 
 
 I started with Scott Helme's automations provided in his blog posts as these were a great starting point to begin tinkering. However, without an EV and cheap overnight charging rates, it suddenly became much more difficult to decide the best windows for charging. Those with EVs are eligible for energy tariffs of ~7p/kWh off-peak, which provides the perfect opportunity for filling the battery and slowly consuming it throughout the day. Instead, as an Agile customer, I may have a few half-hour windows scattered across the day for cheap electricity, but it's pot-luck if these windows are enough to fill the battery (or if the solar panels will top it up). 
 
-I started making my own automations and registered a free account with [Solcast](https://solcast.com/) with the intention of using their Home Assistant integration to leverage future forecasts when determining how high to charge the battery. This worked, but it was taking a lot of effort to constantly tweak and get exactly the behaviour I wanted and the automations were looking really starting to become *ugly*...
+I started making my own automations and registered a free account with [Solcast](https://solcast.com/) with the intention of using their Home Assistant integration to leverage future forecasts when determining how high to charge the battery. This worked, but it took a lot of time and effort to constantly tweak and fine-tune the behaviour I wanted, and the automations were really starting to look *ugly*...
 
 ![pw3](/images/blog/pw3.png)
 
 ![pw7](/images/blog/pw7.png)
 
 
-# Na na na na na na nana Predbat 🦇 
+# Predbat 🦇 
 
 Whilst researching I came across [Predbat](https://github.com/springfall2008/batpred) (also called Batpred). Predbat is the open source brainchild of Trefor Southwell and is seriously impressive and incredibly advanced. You feed Predbat all of the metrics you can muster - electricity tariffs, weather forecasts, battery metrics, solar metrics - and it will do all of the legwork for you in creating an optimal plan for your battery to save you the most money. You can view exactly what it wants to do, when it wants to do it, and optionally have it control your battery system to implement those plans automatically.
 
@@ -272,7 +274,7 @@ pred_bat:
         entity_id: select.<site>_operation_mode
         option: "self_consumption"
 ```
-This has been working beautifully for the last week. The battery charges, discharges, and holds exactly when it needs to. 
+This has been working beautifully. The battery charges, discharges, and holds exactly when it needs to. 
 
 My initial attempts had focused on manipulating the battery 'reserve' level up/down to match Predbat's target SoC. However, this was clashing with both Predbat's internal behaviour which was trying to maintain a fallback reserve, and also Tesla's behaviour where any reserve value between 80-100 will automatically trigger a full backup cycle which was definitely not ideal!
 
@@ -280,7 +282,7 @@ In the end, I found that toggling the grid import option on/off and changing the
 
 ![pw1](/images/blog/pw1.png)
 
-I've been *glued* to dashboards at all hours of the day and night watching Predbat in action; recalculating optimal charge windows and watching it use historical usage to predict how much charge it wants the battery to maintain through peak evening usage. I find myself staring at its plans and projections, nodding in agreement, and getting a thrill knowing that this is all running on hardware chugging away under my stairs.
+I've been *glued* to dashboards at all hours of the day and night watching Predbat in action; recalculating optimal charge windows and watching it use historical usage to predict how much charge it wants the battery to maintain through peak evening usage. I often find myself staring at its plans and projections, nodding in agreement, and getting a thrill knowing it’s all running on my little homelab quietly chugging away under the stairs.
 
 ![pw5](/images/blog/pw5.png)
 
@@ -299,3 +301,5 @@ I've also [provided a Helm chart](https://github.com/edhull/predbat-docker/tree/
 ## Exports
 
 I'm still waiting for my export tariff with Octopus to be approved, however once that is in place I'll either write a part 2 for this blogpost or update this post retrospectively with any recommended changes.
+
+If you’ve set up something similar, I’d love to hear about your experiences. Please feel free to reach out!
