@@ -2,8 +2,8 @@
 layout: post
 title:  "Automating my Tesla Powerwall 3 Using Home Assistant, Teslemetry, Solcast, and Predbat"
 author: "Ed Hull"
-categories: homelab tesla powerwall predbat homeautomation
-tags: homelab tesla powerwall predbat homeautomation teslemetry
+categories: homelab tesla powerwall predbat homeautomation solcast
+tags: homelab tesla powerwall predbat homeautomation teslemetry solcast homeassistant 
 published: true
 ---
 <br/>
@@ -104,7 +104,7 @@ Whilst researching I came across [Predbat](https://github.com/springfall2008/bat
 
 Initially I was put off for the following reasons:
 
-1)  Predbat has no documentation covering use of a Tesla Powerwall. As of writing only the following inverter systems are officially supported:
+1)  Predbat has no documentation covering use of a Tesla Powerwall. As of the time of writing, only the following inverter systems are officially supported:
 ```
 GivEnergy Hybrid, AC and AIO
 Solis
@@ -120,9 +120,9 @@ Sigenergy Sigenstor
 ```
 2) I am running Home Assistant in a container and not on dedicated hardware / VM. This means that the ecosystem around addons more complex as many addons require use of Supervised, which is not available in the HA container. Unfortunately Predbat also does not support installation via HACS. If I wanted to use Predbat, I would need to host it _outside_ of Home Assistant. This is further frustrated by there being no 'official' Predbat container builds.
 
-3)  the software is _advanced_. It has a learning curve in the way that tools like NetZero just don't, but as a result it is massively customisable.
+3) Predbat is _advanced_. It has a learning curve in the way that tools like NetZero just don't and my free time is finite, but as a result it is also massively customisable.
 
-Looking at what Predbat is capable of and what I wanted to do, I decided it was absolutely worth attempting to get it talking to my shiny new Powerwall, and to swap out my (frankly at this point quite ugly) automations as soon as possible. 
+Looking at what Predbat is capable of and what I wanted to do, I decided it was absolutely worth attempting to get it talking to my shiny new Powerwall, and to swap out my (frankly at this point, quite ugly) Home Assistant automations as soon as possible. 
 
 ## Tesla Powerwall + Teslemetry + Solcast + Predbat + ☀️ = 📈
 
@@ -298,6 +298,6 @@ I've also [provided a Helm chart](https://github.com/edhull/predbat-docker/tree/
 
 ## Exports
 
-I'm still waiting for my export tariff with Octopus to be approved, however once that is in place I'll either write a part 2 for this blogpost or update this post retrospectively with any recommended changes.
+I'm still waiting for my export tariff with Octopus to be approved, however once that's in place I'll either write a part 2 or update this post retrospectively with any changes.
 
 If you’ve set up something similar, I’d love to hear about your experiences. Please feel free to reach out!
