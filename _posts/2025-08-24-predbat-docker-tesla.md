@@ -97,8 +97,7 @@ I started making my own automations and registered a free account with [Solcast]
 
 ![pw7](/images/blog/pw7.png)
 
-
-## Predbat 🦇 
+## Predbat 
 
 Whilst researching I came across [Predbat](https://github.com/springfall2008/batpred) (also called Batpred). Predbat is the open source brainchild of Trefor Southwell and is seriously impressive and incredibly advanced. You feed Predbat all of the metrics you can muster - electricity tariffs, weather forecasts, battery metrics, solar metrics - and it will do all of the legwork for you in creating an optimal plan for your battery to save you the most money. You can view exactly what it wants to do, when it wants to do it, and optionally have it control your battery system to implement those plans automatically.
 
