@@ -48,7 +48,7 @@ Every PV / battery installation is unique which makes this more challenging. The
 There are also freak events to consider like lightning storms (or solar eclipses if you really enjoy separating your M&Ms).
 
 My setup is as follows:
-* A Tesla Powerwall 5 (13.5kWh battery, 5kW maximum charge rate)
+* A Tesla Powerwall 3 (13.5kWh battery, 5kW maximum charge rate)
 * 7.2kWh G99 approved export from my local DNO
 * 10x REA Fusion² Panels split between the main house and a garden summerhouse
 * An Envoy Communication Gateway used for monitoring each of the individual solar panels
@@ -89,7 +89,7 @@ I already have Home Assistant running in a container and orchestrated with k3s, 
 
 ![pw2](/images/blog/pw2.png)
 
-I started with Scott Helme's automations provided in his blog posts as these were a great starting point to begin tinkering. However, without an EV and cheap overnight charging rates, it suddenly became much more difficult to decide the best windows for charging. Those with EVs are eligible for energy tariffs of ~7p/kWh off-peak, which provides the perfect opportunity for filling the battery and slowly consuming it throughout the day. Instead, as an Agile customer, I may have a few half-hour windows scattered across the day for cheap electricity, but it's pot-luck if these windows are enough to fill the battery (or if the solar panels will top it up). 
+I began with the automations Scott Helme provided in his blog posts as these were a great starting point to begin tinkering. However, without an EV and cheap overnight charging rates, it suddenly became much more difficult to decide the best windows for charging. Those with EVs are eligible for energy tariffs of ~7p/kWh off-peak, which provides the perfect opportunity for filling the battery and slowly consuming it throughout the day. Instead, as an Agile customer, I may have a few half-hour windows scattered across the day for cheap electricity, but it's pot-luck if these windows are enough to fill the battery (or if the solar panels will top it up). 
 
 I started making my own automations and registered a free account with [Solcast](https://solcast.com/) with the intention of using their Home Assistant integration to leverage future forecasts when determining how high to charge the battery. This worked, but it took a lot of time and effort to constantly tweak and fine-tune the behaviour I wanted, and the automations were really starting to look *ugly*...
 
