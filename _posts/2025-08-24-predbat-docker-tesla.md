@@ -129,9 +129,9 @@ I tackled each of these challenges in turn, starting with deploying Predbat. I l
 
 I deployed Predbat via a hack-and-slash Helm chart and used a Configmap to drop in a custom /config/apps.yaml (which tells Predbat how to connect to Home Assistant, and what entities to query for solar/battery status). It kicked into life, connected to my Home Assistant, and a huge number of new entities suddenly appeared. 
 
-Next, I needed to figure out how to get Predbat to talk to Teslemetry via Home Assistant. It took a _lot_ of tweaking and waking up at 3am to check charge cycles to finally get this working as intended. Whilst Tesla isn't a natively supported brand, it's possible to define your own in the Predbat configuration and use this to drive how Predbat interacts with it. 
+Next, I needed to figure out how to get Predbat to talk to Teslemetry via Home Assistant. It took a _lot_ of tweaking and waking up at 3am to check charge cycles to finally get this working as intended. Whilst Tesla isn't a natively supported brand, it's possible to define your own inverter in Predbat's configuration and use this to drive how Predbat interacts with it. 
 
-I'm very happy to be able to share my Predbat configuration for controlling a Tesla Powerwall 3 with Teslemetry should others want to follow in my footsteps. Replace `<site>` with your own site based on what Teslemetry provides:
+I'm very happy to be able to share my Predbat configuration for controlling a Tesla Powerwall 3 with Teslemetry, should others want to follow in my footsteps. Replace `<site>` with your own site based on what Teslemetry provides:
 
 ```
 pred_bat:
